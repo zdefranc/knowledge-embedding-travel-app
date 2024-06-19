@@ -1,15 +1,14 @@
 # Personalized Travel Planner with LangChain
 
-This application leverages LangChain to perform knowledge embeddings of all your past travel experiences. 
-It then takes in a prompt for an activity you want to do in a certain city and looks through the embeddings to find past experiences that match the activity listed. 
-A prompt is then assembled and placed into ChatGPT to provide personalized travel recommendations.
+This application leverages LangChain to perform knowledge embeddings of all my past travel experiences. 
+It then takes in a prompt for an activity you want to do in a certain city and looks through the embeddings to find past experiences that match the activity prompt entered. 
+An input prompt is then assembled and placed into ChatGPT to provide personalized travel recommendations.
 
 ## Features
 
 	•	Vectorizes Travel Experiences: Uses LangChain to embed past travel experiences from a CSV file.
 	•	Similarity Search: Finds past experiences similar to a given query using FAISS.
 	•	Generates Recommendations: Uses ChatGPT to generate travel recommendations based on past experiences and user queries.
-	•	Streamlit Interface: Provides a user-friendly interface to input trip details and display recommendations.
 
 ## Installation
 
