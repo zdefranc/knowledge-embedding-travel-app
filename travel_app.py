@@ -19,7 +19,7 @@ db = FAISS.from_documents(documents, embeddings)
 
 # 2. Function for similarity search
 def retrieve_info(query):
-    similar_response = db.similarity_search(query, k=3)
+    similar_response = db.similarity_search(query, k=7)
 
     page_contents_array = [doc.page_content for doc in similar_response]
 
@@ -40,7 +40,7 @@ and activities if they align with the user's preferences.
 
 3/ If a city is given in the message about the upcoming trip the suggestions must be close to the city within a 1 hour commute.
 
-4/ Place the reccomendations in a table with the category, location, reccomendation name, a description of the reccomendation, a rating, and a comment on how it relates to past experiences. Include a maximum of 5 reccomendations.
+4/ Place the reccomendations in a table with the category, location, reccomendation name, a description of the reccomendation, and a comment on how it relates to past experiences. Include a maximum of 5 reccomendations.
 
 5/ Pay attention to the rating a low rating means that the activity was not previously enjoyed. Use that in your decision making process to avoid activities that may also not be enjoyed.
 
