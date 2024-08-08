@@ -45,6 +45,8 @@ streamlit run travel_app.py
 
 Thank you for the great tutorial and starting code made by AI Jason. 
 
-["How to give GPT my business knowledge?" - Knowledge embedding 101](https://www.youtube.com/watch?v=c_nCjlSB1Zk).
+["How to give GPT my business knowledge?" - Knowledge embedding 101](https://www.youtube.com/watch?v=c_nCjlSB1Zk)
+
+
 [Github Repo](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbm5mdHFZT1VhMUU3My1SdnhhY1BXWjk4Ql84Z3xBQ3Jtc0ttWnBVbXl3Q0ptNFU5STF2ajViM3VsSFlSREw3MGlCbmtvOEM5ZVQ0WFV4aTlxRFhHOUVDNDlLT0l6blpUdk4xTXpqdWxIRUhsMWc1YmhvNzNWbTFpdmJMb2RCOV9hcGpkVXlFWW9saG92NzlDMkU2RQ&q=https%3A%2F%2Fgithub.com%2FJayZeeDesign%2FKnowledgebase-embedding&v=c_nCjlSB1Zk)
 
