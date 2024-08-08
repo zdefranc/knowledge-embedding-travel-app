@@ -17,7 +17,7 @@ documents = loader.load()
 embeddings = OpenAIEmbeddings()
 db = FAISS.from_documents(documents, embeddings)
 
-# 2. Function for similarity search
+# 2. Create function to perform similarity search for a given query
 def retrieve_info(query):
     similar_response = db.similarity_search(query, k=5)
 
@@ -61,7 +61,7 @@ prompt = PromptTemplate(
 
 chain = prompt | llm
 
-# 4. Retrieval augmented generation
+# 4. Function to generate a response from a given message using retrieved info from knowledge embeddings
 def generate_response(message):
     travel_preferences = retrieve_info(message)
     response = chain.invoke({
@@ -69,10 +69,6 @@ def generate_response(message):
     "travel_preferences": travel_preferences
     })
     return response
-
-# message = 'Find me things to do in Brno, Czechia that is good for a large amount of people.'
-# print(f"\n\n{retrieve_info(message)}")
-# print(f"\n\n{generate_response(message)}")
 
 # Streamlit interface for user input and displaying recommendations
 st.title("Personalized Travel Planner")
