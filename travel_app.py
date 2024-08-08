@@ -19,14 +19,14 @@ db = FAISS.from_documents(documents, embeddings)
 
 # 2. Function for similarity search
 def retrieve_info(query):
-    similar_response = db.similarity_search(query, k=7)
+    similar_response = db.similarity_search(query, k=5)
 
     page_contents_array = [doc.page_content for doc in similar_response]
 
     return page_contents_array
 
 # 3. Setup RunnableSequence & prompts
-llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
+llm = ChatOpenAI(temperature=0, model="gpt-4o")
 
 template = """
 You are a world-class travel advisor. 
@@ -34,15 +34,15 @@ I will share my travel preferences and previous trip experiences with you, and y
 based on these experiences, and you will follow ALL of the rules below:
 
 1/ Recommendations should be very similar or even identical to the past experiences in terms of category, destination type, 
-and activities if they align with the user's preferences.
+and activities if they align with the user's preferences and the bellow message.
 
-2/ If the past experiences are irrelevant, then try to mimic the type of the experiences to suggest new destinations.
+2/ Do not repeat recommendations, make sure the names of the recommendations are not the same.
 
 3/ If a city is given in the message about the upcoming trip the suggestions must be close to the city within a 1 hour commute.
 
-4/ Place the reccomendations in a table with the category, location, reccomendation name, a description of the reccomendation, and a comment on how it relates to past experiences. Include a maximum of 5 reccomendations.
+4/ Place the reccomendations in a table with the category, location, reccomendation name, a description of the reccomendation, and a comment on how it relates to past experiences. Include a maximum of 10 reccomendations.
 
-5/ Pay attention to the rating a low rating means that the activity was not previously enjoyed. Use that in your decision making process to avoid activities that may also not be enjoyed.
+5/ Pay attention to the rating, a low rating means that the activity was not previously enjoyed. Use that in your decision making process to avoid activities that may also not be enjoyed.
 
 Below is a message about what I am looking for in my upcoming trip:
 {message}
